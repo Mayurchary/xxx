@@ -14,155 +14,97 @@ SELECT DISTINCT city FROM station WHERE not REGEXP_LIKE(LOWER(city), '[aeiou]$')
 Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
 SELECT DISTINCT city FROM station WHERE not REGEXP_LIKE(LOWER(city), '[aeiou]$') and not REGEXP_LIKE(LOWER(city), '^[aeiou].');
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-610
-TSM610-02 HW1
-True/False Questions
-1.	According to John Chambers, CEO of Cisco (a leading networking technology company), the information age is the second Industrial Revolution. True
-2.	It is not uncommon for companies to end up spending more money on network management and security tasks than they do on the actual computer equipment itself. True
-3.	A local area network (LAN) connects other LANs and backbone networks (BNs) located in different areas to each other and to wide area networks in a span from 3 to 30 miles.
-4.	A car manufacturer may give access to certain portions of its network to some of its suppliers via the Internet. This is an example of an extranet.
-5.	The network layer performs the same functions in both the OSI and Internet models and is responsible for routing messages from the source computer to the destination computer.
-6.	The application layer is the seventh layer of the Internet model and specifies the type of connection and the electrical signals that pass through it.
-7.	Ethernet is an example of a network layer protocol.
-8.	The specification stage of the de jure standardization process consists of developing nomenclature and identifying the problems to be addressed.
-9.	The Internet has always been open to commercial traffic.
-10.	An Application Service Provider (ASP) develops a specific system and companies purchase or rent the service without installing the system on their own computers.
+HW extra assignment   TSM610-90 Due date Friday 30th, September, 8 AM 
 
-Multiple Choice Questions
-1.	Data communications and networking can be considered as a global area of study because:
-a.	new technologies and applications emerge from a variety of countries and spread around the world
-b.	the technologies enable global communication
-c.	the political and regulatory issues are exactly the same in every country  
-d.	a and b
-e.	none of the above
-2.	Networks that are designed to connect similar computers that share data and software with each other are called:
-a.	client/server networks
-b.	peer-to-peer networks
-c.	host networks
-d.	client networks
-e.	local area networks
+1.	Assuming that each label is 1000 bytes long, how long does it take to transmit one label over the cell network, assuming that the cell phone network operates at 144 kbps (144,000 bits per second and that there are 8 bits in a byte)?  2.)  If Speedy were to upgrade to the new, faster digital phone network that transmits data at 200 Kbps (200,000 bits per second) how long would it take to transmit?
+Ans: 
+I.	Length of each label = 1000 bytes per second
+Speed of network = 144000 bits per second
+1 byte = 8 bits
+Total bits = (8 * 1000) =8000 bits per second
+Transmission time = 8000/144000 = 0.056 Seconds
+
+II.	Length of each label = 1000 bytes per second
+Speed of network = 200000 bits per second
+1 byte = 8 bits
+Total bits = (8 * 1000) =8000 bits per second
+Upgraded Transmission time = 8000/200000 = 0.04 Seconds 
+	   
+2.	Are stop bits necessary in asynchronous transmission? Explain using a diagram.
+
+Ans: Stop bits are required in asynchronous transmission because they convey the message to receiver that the sent bits are received. Once the bits are received the stop bits’ resets itself. which then shows the start of next start bit. It is represented as 1. In every transmission it is the last bit to be received. The diagram below shows the typical start and stop bits the message start with a start bit (0) followed by a ASCII data code and then the Parity bit followed by Stop bit.
+ 
+Figure 1 Shows The Message Format in ASYNCHRONOUS TRANSMISSION
+
+3.	Are large frame sizes better than small frame sizes?  Explain.
+Ans: Larger frame size gives the ability to transfer larger chunks of data at once which is good as well as bad because whenever there is an error in a message bit the whole message bit has to be retransmitted which makes it harder because every time we get an error bit we have to transfer the whole large bit all at once. So smaller frame size is better than the larger frame size.
+Let’s consider the example if a frame size is 10K and received 2 error bits then all the 10000 bits are to be retransmitted. Which is clearly waste of time and with bigger size of frame there are more chances of error bits occurring. So there is always a tradeoff between the larger and smaller frames because smaller frames are less efficient but have a less probability of containing errors which has less cost to retransmit the data.
+
+4.	What are the advantages and disadvantages of host-based networks versus client-server networks?
+Ans: 
+i.	Host based network 
+a.	Advantages
+i.	There is a central server which controls the whole transaction/operation.
+ii.	Updating the data is very easy because we have to make changes over single station and whole of the system will have the same changes.
+b.	Disadvantages
+i.	There is a single processor available to handle all the client requests which makes is harder to control all the requests if there are a huge number of requests.
+ii.	Prioritizing the clients is really hard because of huge clients requests and less processing power
+ii.	Client-Server based network
+a.	Advantages
+i.	90 percent of most organizations- total computer processing power now resides on microcomputer-based LAN-s, not in centralized mainframe computers.
+ii.	Most mainframe software is not as easy to use as microcomputer software, is far more expensive, and can take years to develop.
+b.	Disadvantages
+i.	 The fundamental problem in client-based networks is that all data on the server must travel to the client for processing.
+5.	What is the capacity of a digital circuit with a symbol rate of 10 MHz using Manchester encoding?
+Ans: 
+i.	The capacity of a digital circuit with a symbol rate of 10 MHz using Manchester encoding will be 10 Mbps.
+a.	Capacity of the digital circuit (B) = Symbol rate (s) * bits per symbol (n)
+b.	B = s * 1 bit per second
+c.	B = (10 MHz) * 1 bit per second
+d.	Capacity of the digital circuit (B) = 10Mbps
+
+6.	What is the maximum capacity of an analog circuit with a bandwidth of 4,000 Hz using QAM?  
+Ans:
+i.	Under perfect circumstances, the maximum symbol rate is about 4000 symbols per second.
+ii.	We are using QAM (4 bits per symbol)
+iii.	Maximum data rate = 4 bits per symbol * 4000 symbols per second.
+iv.	Maximum data rate = 16000 bps.
 
 
-3.	A local area network is:
-a.	a large central network that connects other networks in a distance spanning exactly 5 miles.   
-b.	a group of personal computers or terminals located in the same general area and connected by a common cable (communication circuit) so they can exchange information such as a set of rooms, a single building, or a set of well-connected buildings.
-c.	a network spanning a geographical area that usually encompasses a city or county area (3 to 30 miles).
-d.	a network spanning a large geographical area (up to 1000s of miles).
-e.	a network spanning exactly 10 miles with common carrier circuits.
-4.	Which of the following is not a property of a WAN:
-a.	connects backbone networks and MANS.
-b.	spans hundreds or thousands of miles
-c.	provides data transmission speeds from 56Kbps to 10Gbps.
-d.	connects a group of computers in a small geographic area such as room, floor, building or campus.
-e.	uses leased lines from IXCs like ATT, MCI, and Sprint
-5.	A(n) _________ is a LAN that uses the same technologies as the Internet but is provided to invited users outside the organization who access it over the Internet.  
-a.	WAN
-b.	BN
-c.	extranet
-d.	intranet
-e.	MAN
-6.	Which layer of the OSI model is responsible for ensuring flow control so that the destination station does not receive more packets that it can process at any given time?
-a.	presentation
-b.	transport
-c.	physical
-d.	session
-e.	application 
-7.	The fourth layer of the OSI model is called the __________ layer.
+7.	What is the symbol rate of a digital circuit providing 100 Mbps if it uses bipolar NRz signaling?
+Ans: 
+i.	Bandwidth of circuit = 100 Mbps
+ii.	Symbol rate in bipolar NRz is twice the current bandwidth.
+iii.	One voltage changes per Symbol = 2 * 100 Mbps = 200 Mbps.
 
-a.	network 
-b.	transport 
-c.	session 
-d.	data link
-e.	presentation 
-8.	In the Internet model, the application layer corresponds to the ________ layer(s) of the OSI model.
+8.	Smith, Smith, Smith, and Smith is a regional accounting firm that is building a new headquarters building.  The building will have a backbone network that connects eight LANs (two on each floor).  They are very concerned with network errors.  What advice would you give them in the design of the building and network cable planning that would help reduce network errors?
+Ans: I would first advise that the backbone network is the correct for the organization setup. I would stress that errors occurs in all networks. The primary sources of errors are impulse noises, cross talk, echo and attenuation. Errors can be prevented or at least reduced by shielding the cables, moving the cables away from sources of noise and power sources; using repeaters, amplifiers and improving the quality of the equipment, media, and their connections.
 
-a.	data link and network
-b.	session, presentation and application
-c.	application layer
-d.	application and presentation
-e.	network, transport and presentation
-9.	Which is not a function of the physical layer:
+9.	Compare and contrast stop-and-wait ARQ and continuous ARQ.
+Ans:
+i.	With stop-and-wait ARQ, the sender stops and waits for a response from the receiver after each message or data packet. After receiving a packet, the receiver sends either an acknowledgment (ACK) if the message was received without error, or a negative acknowledgment (NAK) if the message contained an error. If it is an NAK, the sender resends the previous message. If it is an ACK, the sender continues with the next message. Stop-and-wait ARQ is by definition, a half-duplex transmission technique.
+ii.	With continuous ARQ, the sender does not wait for an acknowledgment after sending a message; it immediately sends the next one. While the messages are being transmitted, the sender examines the stream of returning acknowledgments. If it receives an NAK, the sender retransmits the needed messages. Continuous ARQ is by definition a full duplex transmission technique, because both the sender and the receiver are transmitting simultaneously.
 
-a.	transmission of bits.
-b.	defining the rules by which one and zeroes are transmitted.
-c.	providing error-free transmission of data.
-d.	providing the physical connection between sender and receiver.
-e.	specifying the type of connection and type of signals, waves or pulses that pass through it.
-10.	Which of the following is not a function of the data link layer?
-a.	deciding when to transmit messages over the media
-b.	formatting the message by indicating where messages start and end, and which part is the address
-c.	detecting and correcting any errors that have occurred in the transmission of the message
-d.	specifying the type of connection, and the electrical signals, radio waves, or light pulses that pass through it
-e.	controlling the physical layer by determining when to transmit
-11.	Which of the following is a term used to group together the physical and data link layers? 
-a.	Internetwork layers
-b.	Hardware layers
-c.	Software layers
-d.	Middleware layers
-e.	Application layers
-12.	In which layer of the Internet model would the HTTP protocol be used?
-a.	physical
-b.	application
-c.	transport
-d.	network
-e.	data link
-13.	The network layer of the Internet model uses the _____________ protocol to route messages though the network.
-a.	TCP
-b.	HTTP
-c.	FTP
-d.	SMTP
-e.	IP
+10.	Describe three approaches to detecting errors, including how they work, the probability of detecting an error, and any other benefits or limitations.
+Ans: The three approaches to detecting errors are Parity checking, Longitudinal redundancy checking and polynomial checking we will explain each of them in detail below.
+i.	Parity Checking: - With parity checking one additional bit is added to each byte in the message. The value of this additional parity bit is based upon the number of 1’s in the byte (including the parity bit) either an even or an odd number. The probability of detecting an error using this technique is about 50 percent.
+ii.	Longitudinal redundancy checking (LRC): - it adds one additional character called the block check character (BCC) to the end of the entire message or packet of data. The value of the BCC is determined in the same manner as the parity bit, but by counting longitudinally through the message rather than by counting vertically through each character. The error detection rate is above 98 percent for typical burst errors of 10 bits or more because it uses in conjunction with parity.
+iii.	Polynomial checking: - it adds a character or series of characters, based on a mathematical algorithm, to the end message. There are two types of polynomial checking: check sum and cyclical redundancy check (CRC). The probability of detecting bursts errors longer than CRC-16 bits is 99.998 percent and for CRC-32 its about 99.99999998 percent.
 
-14.	Which of the following is not true about de jure standards?
-a.	They are always developed before de facto standards.
-b.	One example exists for network layer software (IP).
-c.	They can be developed by an official industry body.
-d.	They can take several years to develop. 
-e.	They can be developed by a government body.
-15.	The three stages of the de jure standardization process are ______________________.
-a.	specification, identification of choices and acceptance.
-b.	planning, implementing and acceptance.
-c.	brainstorming, identification and implementing.
-d.	specification, formalization, and acceptance.
-e.	none of the above.
-16.	Which of the following is not true about ITU-T: 
-a.	It is the technical standards-setting organization of the United Nations International Telecommunications Union
-b.	It is the International Telecommunications Union – Telecommunications Group
-c.	Its membership is limited to U.S. telephone companies
-d.	It is based in Geneva, Switzerland 
-e.	Its membership is comprised of representatives from over 200 member countries
-17.	The Internet standards organization that will allow anyone to join is __________________.
-a.	ANSI
-b.	ISO
-c.	IETF
-d.	IEEE
-e.	ITU-T
-18.	Which of the following is not an application layer standard?
-a.	HTTP
-b.	POP
-c.	T1
-d.	IMAP
-e.	HTML
-19.	Which of the following is not an important future trend in communication and networking? 
-a.	development of online batch systems 
-b.	integration of voice, video, and data
-c.	pervasive networking 
-d.	provision of new information services on rapidly expanding networks 
-e.	development of extremely high speed broadband networks
 
-20.	A _____________ is the input-output hardware device at the end user’s end of a communication circuit in a client-server network.
-a.	server
-b.	circuit
-c.	client
-d.	host  
 
-Short Answer and Essay Questions
-1.	How can data communications networks affect businesses?
-2.	From your own knowledge or background, discuss and describe three important applications of data communications networks for strategic, competitive advantage in business use.  Give examples of three real world firms who have used networks for competitive advantage in the marketplace and discuss why these networks contributed to their expertise or competitive advantage.
-3.	How do LANs differ from WANs, and BNs?
-4.	Draw a diagram of the Internet model and describe what each of the five layers do.  Put three examples of standards on each of your layers in the diagram.  Do this in detail, explaining how a message is transmitted from one computer to another using this model.
-5.	What is the difference between an extranet and intranet?  
-6.	 What are the seven layers of the OSI model and what does each of these layers do?  How does the OSI model compare to the Internet model?  What does OSI stand for, and who developed this model?
-7.	What is VOIP? What are some examples of companies that provide VOIP as a service to their customers? 
-8.	Explain why it is such a great time to be an IT professional. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
